@@ -46,7 +46,7 @@ class Detector:
         for word in info:
             if word in self.filler_words:
                 info.remove(word)
-        print(info)
+
         tweet_bad_words = []
         tweet_not_good_words = []
         tweet_bad_emojis = []
