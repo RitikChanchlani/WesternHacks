@@ -26,10 +26,43 @@ nav ul:after {
 }
 
 .navbar li a{
+    font-family: 'Roboto Slab', serif;
     font-size: 20px;
+    font-weight: bold;
     color:black;
 }
 
 .header{
+    display: center;
+}
+
+textarea{
+    margin:0px auto;
+}
+
+body{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 153, 255));
+    font-family: 'Roboto Slab', serif;
+    font-size: 40 px;
+    font-weight: bold;
+    color:black;
+    float: center; 
+}
+
+.title {
     text-align: center;
 }
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    text-align: center;
+}
+
+
+
+
+
+
