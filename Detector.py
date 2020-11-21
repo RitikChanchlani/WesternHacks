@@ -68,7 +68,6 @@ class Detector:
                 if word == "🖕":
                     tweet_bad_emojis.append(word)
                     found = True
-                    break
             if not found:
                 for i in range(len(self.not_good_words)):
                     if word == self.not_good_words[i]:
@@ -145,5 +144,5 @@ class Detector:
 
 d = Detector()
 d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt")
-results = d.checkTweet("bro ur so not fat not not hardly ugly 🖕 headass")
+results = d.checkTweet("not wrong wrinkle vagina 🖕 ass")
 print(results)
