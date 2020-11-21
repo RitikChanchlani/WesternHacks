@@ -1,10 +1,22 @@
+title {
+    text-align: center;
+}
+
 .navbar
 {
     list-style-type: none;
     margin: 0;
-    padding: 0 2%;
+    padding: 100 2%;
     background-color:dodgerblue;
     overflow:hidden;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    float:none;
+    background-color: #B3B6B7;
+    border-color: yellow;
+    border-radius: 10px;
+    font-size: 30
+  
 }
 
 nav ul {
@@ -30,6 +42,17 @@ nav ul:after {
     font-size: 20px;
     font-weight: bold;
     color:black;
+    padding: 50px;
+    text-decoration: none;
+}
+
+.navbar li a:hover{
+    color: black;
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(252, 252, 252), 1px 1px 0 rgb(255, 255, 255);
+}
+
+.navbar li a:active{
+    color: white;
 }
 
 .header{
@@ -60,9 +83,3 @@ label {
     height: 600px;
     text-align: center;
 }
-
-
-
-
-
-
