@@ -1,16 +1,16 @@
-def function1(word_list, keyword_value_list):
-    keyword_count = 0
+def function1(list_word, keyword_value_list):
+    num_keyword = 0
     total_score = 0
-    for word in word_list:
+    for word in list_word:
         for keyword_pairing in keyword_value_list:
             if word == keyword_pairing[0]:
-                keyword_count += 1
+                num_keyword += 1
                 total_score += keyword_pairing[1]
-    if keyword_count > 0:
-        score = total_score / keyword_count
+    if num_keyword != 0:
+        score = total_score / num_keyword
         return score
     else:
-        return "no results"
+        return "none"
 
 def results(average1, keyword_count1, count1):
     try:
@@ -22,7 +22,7 @@ def results(average1, keyword_count1, count1):
 
 def function2(file, keyword_file):
     keyword_list = []
-    stripped_kh_pair = []
+    word_value = []
     stripped_info = []
 
     count = 0
@@ -33,7 +33,7 @@ def function2(file, keyword_file):
 
     try:
         # keywords file (code from assignment document)
-        keywordfile = open(keyword_file,"r",encoding="utf-8")
+        keywordfile = open(keyword_file,"r")
 
         for line in keywordfile:
             count += 1
@@ -41,18 +41,18 @@ def function2(file, keyword_file):
 
             # strip /n from number
             for word in keyword_happiness_pair:
-                stripped_kh_pair.append(word.strip())
+                word_value.append(word.strip())
             # convert happiness value to integer
-            stripped_kh_pair[1] = int(stripped_kh_pair[1])
+            word_value[1] = int(word_value[1])
 
-            keyword_list.append(stripped_kh_pair)
+            keyword_list.append(word_value)
 
             # resets so that the previous pair is not appended again
-            stripped_kh_pair = []
+            word_value = []
         # closes keywords file
         keywordfile.close()
 
-        file = open(file,"r",encoding="utf-8")
+        file = open(file,"r")
 
         for line in file:
             total_count += 1
@@ -70,7 +70,7 @@ def function2(file, keyword_file):
 
             results = function1(word_list, keyword_list)
 
-            if results != "no results":
+            if results != "none":
                 total_score += results
                 keyword_count += 1
                 average = total_score / keyword_count
@@ -93,10 +93,14 @@ keyword = input("Please enter the name of the keyword file.")
 final_results = function2(text, keyword)
 # empty list is returned by function2 in the case of IOError
 
+obscenity_rating = final_results[0]
+num_keyword_messages = final_results[1]
+total_num_messages = final_results(2)
+
 if final_results != "IOError":
     print("\nResults:")
-    print("Average meanness score:", final_results[0])
-    print("Number of keyword texts:", final_results[1])
-    print("Total number:", final_results[2])
+    print("Average meanness score:", obscenity_rating)
+    print("Number of keyword texts:", num_keyword_messages)
+    print("Total number:", total_num_messages)
 else:
     print("\nPlease try again.")
