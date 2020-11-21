@@ -40,6 +40,9 @@ class Detector:
         self.not_good_words = []
         self.bad_words = []
         self.filler_words = []
+        self.pronouns = []
+        self.negation_words = []
+        self.bad_emojis = ['🍑', "🖕", '🍆 ']
 
     def checkTweet(self, tweet):
         info = tweet.split()
@@ -65,21 +68,16 @@ class Detector:
                         found = True
                         break
             if not found:
-                if word == "🖕":
+                if word in self.bad_emojis:
                     tweet_bad_emojis.append(word)
                     found = True
             if not found:
                 for i in range(len(self.not_good_words)):
                     if word == self.not_good_words[i]:
-                        negation_words_list = []
-                        negation_words_file = open("negation_words.txt", "r")
-                        for word in negation_words_file:
-                            stripped_word = word.strip()
-                            negation_words_list.append(stripped_word)
                         previous_word_index = unaltered_word_index - 1
                         not_counter = 0
                         # continues until the previous word is not a negation word
-                        while info[previous_word_index] in negation_words_list:
+                        while info[previous_word_index] in self.negation_words:
                             not_counter += 1
                             previous_word_index -= 1
                         # ex: "not not ___" does not count
@@ -114,7 +112,7 @@ class Detector:
 
         return [tweet_bad_words, tweet_not_good_words, tweet_bad_emojis]
 
-    def load_dictionary(self, bad_words_file, not_good_words_file, good_words_file, filler_words_file):
+    def load_dictionary(self, bad_words_file, not_good_words_file, good_words_file, filler_words_file, pronouns_file, negation_words_file):
         try:
             with open(bad_words_file, "r") as reader:
                 lines = reader.readlines()
@@ -136,6 +134,16 @@ class Detector:
                 for line in lines:
                     line = line.replace('\n', '')
                     self.filler_words.append(line)
+            with open(pronouns_file, "r") as reader:
+                lines = reader.readlines()
+                for line in lines:
+                    line = line.replace('\n', '')
+                    self.pronouns.append(line)
+            with open(negation_words_file, "r") as reader:
+                lines = reader.readlines()
+                for line in lines:
+                    line = line.replace('\n', '')
+                    self.negation_words.append(line)
         except FileNotFoundError:
             pass
 
@@ -143,6 +151,7 @@ class Detector:
 
 
 d = Detector()
-d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt")
-results = d.checkTweet("not wrong wrinkle vagina 🖕 ass")
+d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt", "pronouns.txt"
+                  , "negation_words.txt")
+results = d.checkTweet("not wrong wrinkle vagina 🖕 ass i love little girls")
 print(results)
