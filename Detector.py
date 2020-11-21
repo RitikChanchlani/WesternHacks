@@ -43,7 +43,11 @@ class Detector:
 
     def checkTweet(self, tweet):
         info = tweet.split()
-        print(info)
+        
+        for word in info:
+            if word in self.filler_words:
+                info.remove(word)
+               
         tweet_bad_words = []
         tweet_not_good_words = []
 
@@ -90,7 +94,7 @@ class Detector:
 
         return [tweet_bad_words, tweet_not_good_words]
 
-    def load_dictionary(self, bad_words_file, not_good_words_file, good_words_file):
+    def load_dictionary(self, bad_words_file, not_good_words_file, good_words_file, filler_words_file):
         try:
             with open(bad_words_file, "r") as reader:
                 lines = reader.readlines()
@@ -107,11 +111,16 @@ class Detector:
                 for line in lines:
                     line = line.replace('\n', '')
                     self.good_words.append(line)
+            with open(filler_words_file, "r") as reader:
+                lines = reader.readlines()
+                for line in lines:
+                    line = line.replace('\n', '')
+                    self.filler_words.append(line)
         except FileNotFoundError:
             pass
 
 d = Detector()
-d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt")
+d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt")
 results = d.checkTweet("I railed your mom")
 print(results)
 
