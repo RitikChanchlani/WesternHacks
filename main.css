@@ -1,0 +1,35 @@
+.navbar
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 2%;
+    background-color:dodgerblue;
+    overflow:hidden;
+}
+
+nav ul {
+    font-size: 0;
+    margin: 10%;
+    padding: 0%;
+    text-align: justify;
+    padding: 0 20%;
+}
+
+nav ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.navbar li{
+    display: inline-block;
+}
+
+.navbar li a{
+    font-size: 20px;
+    color:black;
+}
+
+.header{
+    display: center;
+}
