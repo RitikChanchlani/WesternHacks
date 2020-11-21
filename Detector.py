@@ -49,9 +49,10 @@ class Detector:
         print(info)
         tweet_bad_words = []
         tweet_not_good_words = []
+        tweet_bad_emojis = []
 
-        for unaltered_word in info:
-            word = unaltered_word.lower()
+        for unaltered_word_index in range(len(info)):
+            word = info[unaltered_word_index].lower()
             found = False
             for entry in self.good_words:
                 if word == entry:
@@ -64,11 +65,32 @@ class Detector:
                         found = True
                         break
             if not found:
+                if word == "🖕":
+                    tweet_bad_emojis.append(word)
+                    found = True
+                    break
+            if not found:
                 for i in range(len(self.not_good_words)):
                     if word == self.not_good_words[i]:
-                        tweet_not_good_words.append(self.not_good_words[i])
-                        found = True
-                        break
+                        negation_words_list = []
+                        negation_words_file = open("negation_words.txt", "r")
+                        for word in negation_words_file:
+                            stripped_word = word.strip()
+                            negation_words_list.append(stripped_word)
+                        previous_word_index = unaltered_word_index - 1
+                        not_counter = 0
+                        # continues until the previous word is not a negation word
+                        while info[previous_word_index] in negation_words_list:
+                            not_counter += 1
+                            previous_word_index -= 1
+                        # ex: "not not ___" does not count
+                        if (not_counter % 2) != 0:
+                            found = True
+                            break
+                        else:
+                            tweet_not_good_words.append(self.not_good_words[i])
+                            found = True
+                            break
             if not found:
                 for entry in self.bad_words:
                     if word.find(entry) != -1:
@@ -91,7 +113,7 @@ class Detector:
                     if check_misspelt_profanity(word, entry):
                         tweet_bad_words.append(entry)
 
-        return [tweet_bad_words, tweet_not_good_words]
+        return [tweet_bad_words, tweet_not_good_words, tweet_bad_emojis]
 
     def load_dictionary(self, bad_words_file, not_good_words_file, good_words_file, filler_words_file):
         try:
@@ -118,11 +140,10 @@ class Detector:
         except FileNotFoundError:
             pass
 
+#user_text = input("Please enter the text you would like to scan:\n")
+
+
 d = Detector()
 d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt")
-results = d.checkTweet("I think ben is really ugly")
+results = d.checkTweet("bro ur so not fat not not hardly ugly 🖕 headass")
 print(results)
-
-
-
-
