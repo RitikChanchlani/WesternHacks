@@ -34,20 +34,19 @@ def writefile(f1, f2):
         f.write(word)
     f.close()
 
-
 class Detector:
     def __init__(self):
         self.good_words = []
         self.not_good_words = []
         self.bad_words = []
+        self.filler_words = []
 
     def checkTweet(self, tweet):
         info = tweet.split()
-        
         for word in info:
             if word in self.filler_words:
                 info.remove(word)
-               
+        print(info)
         tweet_bad_words = []
         tweet_not_good_words = []
 
@@ -65,9 +64,9 @@ class Detector:
                         found = True
                         break
             if not found:
-                for i in self.not_good_words:
-                    if word == i:
-                        tweet_not_good_words.append(i)
+                for i in range(len(self.not_good_words)):
+                    if word == self.not_good_words[i]:
+                        tweet_not_good_words.append(self.not_good_words[i])
                         found = True
                         break
             if not found:
@@ -121,7 +120,7 @@ class Detector:
 
 d = Detector()
 d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt")
-results = d.checkTweet("I railed your mom")
+results = d.checkTweet("I think ben is really ugly")
 print(results)
 
 
