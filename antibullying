@@ -95,7 +95,7 @@ final_results = function2(text, keyword)
 
 if final_results != "IOError":
     print("\nResults:")
-    print("Average score:", final_results[0])
+    print("Average meanness score:", final_results[0])
     print("Number of keyword texts:", final_results[1])
     print("Total number:", final_results[2])
 else:
