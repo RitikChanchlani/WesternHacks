@@ -12,14 +12,6 @@ def function1(list_word, keyword_value_list):
     else:
         return "none"
 
-def results(average1, keyword_count1, count1):
-    try:
-        r_tuple = ("%.2f"%average1, keyword_count1, count1)
-    except UnboundLocalError:
-        r_average = 0
-        r_tuple = (average1, keyword_count1, count1)
-    return r_tuple
-
 def function2(file, keyword_file):
     keyword_list = []
     word_value = []
@@ -81,8 +73,8 @@ def function2(file, keyword_file):
 
     except IOError:
         return "IOError"
-    # returns a list of tuples
-    tuple = (round(average, 2), keyword_count, count)
+
+    tuple = (round(average, 3), keyword_count, count)
 
     return tuple
 
@@ -95,7 +87,7 @@ final_results = function2(text, keyword)
 
 obscenity_rating = final_results[0]
 num_keyword_messages = final_results[1]
-total_num_messages = final_results(2)
+total_num_messages = final_results[2]
 
 if final_results != "IOError":
     print("\nResults:")
