@@ -1,0 +1,9 @@
+suck, 8
+fat, 8
+ugly, 7
+joe, 5
+mama, 10
+dumb, 2
+stupid, 3
+idiot, 5
+hate, 3
