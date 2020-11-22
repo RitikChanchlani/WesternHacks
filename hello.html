@@ -1,26 +1,69 @@
-{% load static %}
 <head>
     <title>No Cyber Bullying</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen"/>
 </head>
 <body>
     <h1>Stop Cyber Bullying</h1>
     <nav>
         <ul class="navbar">
-            <li><a href="/home">Homepage</a></li>
-            <li><a href="/translator">Translator</a></li>
-            <li><a href="/educational">Education</a></li>
-            <li><a href="about">About Us</a></li>
+            <li><a href="hello.html">Homepage</a></li>
+            <li><a href="translator.html">Translator</a></li>
+            <li><a href="educational.html">Educational Resources</a></li>
+            <li><a href="about.html">About Us</a></li>
         </ul>
-    </nav>
-    <h2>
-        As our world becomes more digitally connected, children around the world have started to connect through the cyberspace.
-        With the COVID-19 pandemic, children have started started to rely on online communication to connect with their peers.
-        With more children communicating online everyday it is important that they understand the consiquences of cyber Bullying
-        and that when communicating online, misinterpretations of texts and emails can result in accidental cyber bullying. For 
-        this reason we created stopcyberbullying.com to educate students and give them resources to check their messages BEFORE they
-        are sent.
-    </h2>    
-    <img src="https://static.thenounproject.com/png/3424273-200.png" class="center"></img>
-    <h6 class="center">Image By:Martins Ratkus</h6>
+    </nav>    
 </body>
+<footer>
+    <form method="post" action="mailto:kevinfxie@gmail.com?subject=question">
+      <formwriting>
+        Feel free to contact us if you have any further questions or concerns!
+        <br>
+        <!--Aligns form-->
+          <table class="footertable">
+            <tr>
+              <td class="bottomform">
+                Your Name:
+              </td>
+              <td>
+                <input type="text" name="firstname">
+              </td>
+              <br>
+              <tr>
+                  <td class="bottomform">
+                    Your Email:
+                  </td>
+                  <td>
+                    <input type="text" name="question">
+                  </td>
+                </tr>
+                <tr>
+            <tr>
+              <td class="bottomform">
+                Your Question:
+              </td>
+              <td>
+                <input type="text" name="question">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div>
+                  <input type="submit" value="Submit">
+                </div>
+              </td>
+            </tr>
+          </table>
+        </formwriting>
+      </form>
+    <disclaimer>
+      Clicking "Submit" will contact the creators of this website.
+    </disclaimer>
+  </form>
+
+  <br>
+  <copyrightwriting>
+    2020
+    <br>
+    Hackathon Team
+  </copyrightwriting>
+</footer>
