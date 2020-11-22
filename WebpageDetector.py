@@ -159,7 +159,7 @@ class Detector:
                     line = line.replace('\n', '')
                     self.pronouns_file.append(line)
         except FileNotFoundError:
-            pass
+            print("One of your files is invalid)
 
     def check_webpage(self, url):
         try:
