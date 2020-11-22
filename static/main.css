@@ -1,0 +1,307 @@
+title {
+    text-align: center;
+}
+
+.navbar
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 100 2%;
+    background-color:dodgerblue;
+    overflow:hidden;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    float:none;
+    background-color: #B3B6B7;
+    border-color: yellow;
+    border-radius: 10px;
+    font-size: 30
+  
+}
+
+nav ul {
+    font-size: 0;
+    margin: 10%;
+    padding: 0%;
+    text-align: justify;
+    padding: 0 20%;
+}
+
+nav ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.navbar li{
+    display: inline-block;
+}
+
+.navbar li a{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:black;
+    padding: 50px;
+    text-decoration: none;
+}
+
+.navbar li a:hover{
+    color: black;
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(252, 252, 252), 1px 1px 0 rgb(255, 255, 255);
+}
+
+.navbar li a:active{
+    color: white;
+}
+
+.header{
+    display: center;
+}
+
+textarea{
+    margin:0px auto;
+}
+
+body{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 153, 255));
+    font-family: 'Roboto Slab', serif;
+    font-size: 40 px;
+    font-weight: bold;
+    color:black;
+    float: center; 
+}
+
+.title {
+    text-align: center;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    text-align: center;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.layout {
+  width:100%
+}
+
+.middlecolumn {
+  padding-right:6.5em;
+  color:black
+}
+
+.leftcolumn {
+    padding-right: 4em;
+}
+
+td {
+  color:black
+}
+
+.ul {
+  color:black;
+}
+
+/*Adjusts size of video and removes border, allowing them to fit side by side*/
+iframe {
+  height: 400px;
+  width:40%;
+  border: none;
+  margin: 4.9%
+}
+
+
+
+
+.warning {
+  text-align: center;
+}
+
+
+
+nopadding {
+  padding: none
+}
+
+oneword {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+
+
+footer {
+  text-align:center;
+  float: center;
+  background-color: #B3B6B7
+}
+
+h1 {
+  font-family: "trebuchet ms";
+  color: black;
+  text-align: center;
+  font-size: 70px;
+  text-shadow: -1px -1px rgb(255, 255, 255), 3px 3px #5c5c5c;
+  font-style:oblique;
+}
+
+h3 {
+  font-family: 'Corben', Georgia, Times, serif;
+  text-align:center;
+  font-size: 50px;
+  color: black;
+}
+
+h4 {
+  text-align:center;
+}
+
+h5 {
+  font-family: 'Corben', Georgia, Times, serif;
+  text-align:center;
+  font-size: 27px;
+  color:black;
+}
+
+p {
+  font-family: 'Corben', Georgia, Times, serif;
+  text-align:center;
+  font-size: 16px;
+  color: black;
+}
+
+.aboutustext {
+text-align: left;
+}
+
+ol {
+  font-family: 'Corben', Georgia, Times, serif;
+  text-align:left;
+  font-size: 16px;
+  color: black;
+  list-style-position:inside;
+}
+    /*list-style-position moves numbers next to words*/
+
+ul {
+  font-family: 'Corben', Georgia, Times, serif;
+  text-align:center;
+  font-size: 16px;
+  color: black;
+  list-style-type:none;
+  padding-left: .4em;
+}
+
+li {
+  color:black
+}
+
+
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+formwriting, .bottomform {
+  font-size:20;
+  font-family: "Georgia";
+  color: black;
+}
+
+disclaimer {
+  font-size:10;
+  font-family: "Georgia";
+  color:black;
+}
+
+copyrightwriting {
+  color:black;
+  font-family: "Georgia";
+  font-size:10
+}
+
+/*Centers table*/
+.footertable {
+  margin: auto
+}
+
+
+
+div {
+  text-align: center;
+}
+
+.textbox {
+  background-color:beige;
+  color: black;
+  text-align: left;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: text;
+  height: 300px;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.smalltextbox {
+  background-color:beige;
+ /* border: round;*/
+  color: black;
+  /*padding: 15px 32px;*/
+  text-align: left;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: text;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 40%;
+}
+
+.leftbutton {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.rightbutton {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+.translatordescription {
+  margin-left: 5%;
+}
