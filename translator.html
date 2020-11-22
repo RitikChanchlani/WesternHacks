@@ -7,39 +7,110 @@
 </head>
 <body>
 <div class = "title">
-    <h1>Translator</h1>
+    <h1>Scanner</h1>
 </div>
     <nav>
         <ul class="navbar">
             <li><a href="/home">Homepage</a></li>
-            <li><a href="/translator">Translator</a></li>
+            <li><a href="/scanner">Scanner</a></li>
             <li><a href="/educational">Educational</a></li>
             <li><a href="about">About Us</a></li>
         </ul>
     </nav>
-    <h2>TEXT</h2>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>
+    <h2 style="margin-left: 5%">Check text for cyberbullying keywords:</h2>
+</td>
+<td>
+    <h2 style="margin-left: 5%">OR check a website for cyberbullying keywords:</h2>
+</td>
+</tr>
+<tr>
+    <td>
     <form action="/text" method="post">
-        {% csrf_token %}
-        Enter your tweet here:<br>
-        <textarea type="text" name="param" name="tweet" rows="30" cols="70" maxlength="" style="resize: none;"required>
+        <p class="translatordescription"> {% csrf_token %}
+        Enter text below to scan for cyberbullying keywords and obscenities:</p><br>
+        <textarea type="text" class="textbox" name="param" name="tweet" rows="30" cols="70" maxlength="" style="resize: none;"required>
         </textarea>
         {{data_external}}<br><br>
         <b>{{data1}}</b>
 
         <br><br>
-        <input type="submit" value="Translate">
+        <input type="submit" class="leftbutton" value="Translate">
     </form>
-    <h2>WEBSITE</h2>
+</td>
+  <td>
     <form action="/website" method="post">
-        {% csrf_token %}
-        Enter your tweet here:<br>
-        <textarea type="text" name="param" name="tweet" rows="1" cols="70" maxlength="" style="resize: none;"required>
+        <p class="translatordescription"> {% csrf_token %}
+        Enter website URL to scan website for cyberbullying keywords or obscenities:</p><br>
+        <textarea type="text" class="smalltextbox" name="param" name="tweet" rows="1" cols="70" maxlength="" style="resize: none;"required>
         </textarea>
         {{data_external}}<br><br>
         <b>{{data2}}</b>
 
         <br><br>
-        <input type="submit" value="Translate">
+        <input type="submit" class="rightbutton" value="Translate">
     </form>
-
+</td>
+</tr>
+</table>
 </body>
+<footer>
+    <form method="post" action="mailto:kevinfxie@gmail.com?subject=question">
+      <formwriting>
+          <br>
+        Feel free to contact us if you have any further questions or concerns!
+        <br>
+        <!--Aligns form-->
+          <table class="footertable">
+            <tr>
+              <td class="bottomform">
+                Your Name:
+              </td>
+              <td>
+                <input type="text" name="firstname">
+              </td>
+              <br>
+              <tr>
+                  <td class="bottomform">
+                    Your Email:
+                  </td>
+                  <td>
+                    <input type="text" name="question">
+                  </td>
+                </tr>
+                <tr>
+            <tr>
+              <td class="bottomform">
+                Your Question:
+              </td>
+              <td>
+                <input type="text" name="question">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div>
+                  <input type="submit" value="Submit">
+                </div>
+              </td>
+            </tr>
+          </table>
+        </formwriting>
+      </form>
+    <disclaimer>
+      Clicking "Submit" will contact the creators of this website.
+    </disclaimer>
+  </form>
+
+  <br>
+  <copyrightwriting>
+    2020
+    <br>
+    Hackathon Team
+  </copyrightwriting>
+</footer>
+</html>
