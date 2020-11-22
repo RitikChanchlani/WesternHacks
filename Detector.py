@@ -14,6 +14,7 @@ def check_misspelt_profanity(word, dict_entry):
         return True
 
 
+
 def writefile(f1, f2):
     l1 = []
     l2 = []
@@ -153,5 +154,5 @@ class Detector:
 d = Detector()
 d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt", "pronouns.txt"
                   , "negation_words.txt")
-results = d.checkTweet("not wrong wrinkle vagina 🖕 ass i love little girls")
+results = d.checkTweet("ugly wrinkle vagina 🖕 ass i love little girls")
 print(results)
