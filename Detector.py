@@ -115,7 +115,34 @@ class Detector:
                     if check_misspelt_profanity(word, entry):
                         tweet_bad_words.append(entry)
 
-        return [tweet_bad_words, tweet_not_good_words, tweet_bad_emojis]
+                output = ''
+        output += "Message Report\n"
+        output += "Number of vulgar words: " + str(len(tweet_bad_words)) + "\n"
+        output += "List of vulgar words: "
+        for word in tweet_bad_words:
+            output += word + ", "
+        output+= "\n"
+        percentage_vulgar_words = (len(tweet_bad_words)/ len(info)) * 100
+        percentage_vulgar_words = format(percentage_vulgar_words, '.2f')
+        output += "Percentage of words that are vulgar: " + percentage_vulgar_words + '%\n'
+        output += "Number of concerning words: " + str(len(tweet_not_good_words)) + "\n"
+        output += "List of concerning words: "
+        for word in tweet_not_good_words:
+            output += word + ", "
+        output += "\n"
+        percentage_concerning_words = (len(tweet_not_good_words)/ len(info)) * 100
+        percentage_concerning_words = format(percentage_concerning_words, '.2f')
+        output += "Percentage of words that are concerning: " + percentage_concerning_words + '%\n'
+        output += "Number of vulgar emojis: " + str(len(tweet_bad_emojis)) + "\n"
+        output += "List of vulgar emojis: "
+        for word in tweet_bad_emojis:
+            output += word + ", "
+        output += "\n"
+        percentage_vulgar_emojis = (len(tweet_bad_emojis)/ len(info)) * 100
+        percentage_vulgar_emojis = format(percentage_vulgar_emojis, '.2f')
+        output += "Percentage of emojis that are vulgar: " + percentage_vulgar_emojis + '%\n'
+
+        return output
 
     def load_dictionary(self, bad_words_file, not_good_words_file, good_words_file, filler_words_file, pronouns_file):
         try:
