@@ -178,6 +178,10 @@ label {
     color: black;
   }
   
+.aboutustext {
+  text-align: left;
+}
+
   ol {
     font-family: 'Corben', Georgia, Times, serif;
     text-align:left;
@@ -212,18 +216,18 @@ label {
   
   formwriting, .bottomform {
     font-size:20;
-    font-family: "trebuchet ms";
-    color: white
+    font-family: "Georgia";
+    color: black;
   }
   
   disclaimer {
     font-size:10;
     font-family: "Georgia";
-    color: white
+    color:black;
   }
   
   copyrightwriting {
-    color:White;
+    color:black;
     font-family: "Georgia";
     font-size:10
   }
@@ -239,3 +243,60 @@ label {
     text-align: center;
   }
   
+  .textbox {
+    background-color:beige;
+    color: black;
+    text-align: left;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: text;
+    height: 300px;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .smalltextbox {
+    background-color:beige;
+   /* border: round;*/
+    color: black;
+    /*padding: 15px 32px;*/
+    text-align: left;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: text;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 40%;
+  }
+
+  .leftbutton {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+
+  .rightbutton {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+
+  .translatordescription {
+    style="margin-left: 5%"
+  }
