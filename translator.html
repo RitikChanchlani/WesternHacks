@@ -1,0 +1,33 @@
+{% load static %}
+<head>
+    <title>No Cyber Bullying</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" media="screen"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class = "title">
+    <h1>Translator</h1>
+</div>
+    <nav>
+        <ul class="navbar">
+            <li><a href="/home">Homepage</a></li>
+            <li><a href="/translator">Translator</a></li>
+            <li><a href="/educational">Educational</a></li>
+            <li><a href="about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <form action="/external" method="post">
+        {% csrf_token %}
+        Enter your tweet here:<br>
+        <textarea type="text" name="param" name="tweet" rows="30" cols="70" maxlength="" style="resize: none;"required>
+        </textarea>
+        {{data_external}}<br><br>
+        <b>{{data1}}</b>
+
+        <br><br>
+        <input type="submit" value="Translate">
+    </form>
+
+</body>
