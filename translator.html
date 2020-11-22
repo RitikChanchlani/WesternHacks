@@ -17,14 +17,26 @@
             <li><a href="about">About Us</a></li>
         </ul>
     </nav>
-
-    <form action="/external" method="post">
+    <h2>TEXT</h2>
+    <form action="/text" method="post">
         {% csrf_token %}
         Enter your tweet here:<br>
         <textarea type="text" name="param" name="tweet" rows="30" cols="70" maxlength="" style="resize: none;"required>
         </textarea>
         {{data_external}}<br><br>
         <b>{{data1}}</b>
+
+        <br><br>
+        <input type="submit" value="Translate">
+    </form>
+    <h2>WEBSITE</h2>
+    <form action="/website" method="post">
+        {% csrf_token %}
+        Enter your tweet here:<br>
+        <textarea type="text" name="param" name="tweet" rows="1" cols="70" maxlength="" style="resize: none;"required>
+        </textarea>
+        {{data_external}}<br><br>
+        <b>{{data2}}</b>
 
         <br><br>
         <input type="submit" value="Translate">
