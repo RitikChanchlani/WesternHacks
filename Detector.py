@@ -115,7 +115,7 @@ class Detector:
                     if check_misspelt_profanity(word, entry):
                         tweet_bad_words.append(entry)
 
-                output = ''
+        output = ''
         output += "Message Report\n"
         output += "Number of vulgar words: " + str(len(tweet_bad_words)) + "\n"
         output += "List of vulgar words: "
