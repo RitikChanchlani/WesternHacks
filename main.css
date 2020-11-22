@@ -90,8 +90,12 @@ label {
   }
   
   .middlecolumn {
-    padding-left:13em;
+    padding-right:6.5em;
     color:black
+  }
+
+  .leftcolumn {
+      padding-right: 4em;
   }
 
   td {
