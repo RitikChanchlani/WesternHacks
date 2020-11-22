@@ -190,5 +190,6 @@ class Detector:
 
 d = Detector()
 d.load_dictionary("restricted_words.txt", "concerning_words.txt", "dictionary.txt", "filler_words.txt", "pronouns_file.txt")
-results = d.checkTweet("")
+string = d.check_webpage("https://www.urbandictionary.com")
+results = d.checkTweet(string)
 print(results)
